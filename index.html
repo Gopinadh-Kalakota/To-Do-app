@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<script src="https://kit.fontawesome.com/ea6d4fec5e.js" crossorigin="anonymous"></script>
+	<script type="text/javascript">
+		function todo(){
+			var newTodo=document.getElementById("newTodo").value
+			document.getElementById("newTodo").value=""
+			//console.log(newTodo)
+			if(newTodo===""){
+				alert("Enter a todo")
+			}
+			else{
+				addTodo(newTodo)
+			}
+	}
+	function addTodo(newValue){
+		let ul=document.querySelector("ul")
+		console.log(ul)
+		let li=document.createElement("li")
+		li.innerHTML=`
+		<span class="listitem">${newValue}</span>
+		<i class="fa-solid fa-rectangle-xmark"></i>`
+		li.classList.add("list-type")
+		ul.appendChild(li)
+	}
+	</script>
+	<style type="text/css">
+		.list-type{
+			list-style: none;
+		}
+		.listitem{
+			font-size: 3rem;
+		}
+		.todo{
+			background-color: skyblue;
+			background-image:url(https://img.freepik.com/free-vector/indian-tricolor-theme-watercolor-texture-patriotic-background-vector_1055-11952.jpg?w=900&t=st=1668855337~exp=1668855937~hmac=0e912cc1bdec9fddad49174dbe5fd4dc68a58fa306ae58809cd8a3a793c679db);
+			background-size: 100%;
+			font-style: italic;
+			: ;
+			padding: 20% 42%;
+		}
+	</style>
+</head>
+<body class="todo">
+	<input type="text" id="newTodo" value="" placeholder="Enter a todo" />
+	<ul>
+	</ul>
+	<button onclick="todo()">Submit</button>
+</body>
+</html>
